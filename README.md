@@ -1,7 +1,7 @@
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
 <b>** NOTICE **
-This is an experimental community node</B>
+This is an experimental community node - currently only works with ai-beta branch of n8n. (Not Recommended for Production Usage)</B>
 
 # n8n-nodes-ai
 
