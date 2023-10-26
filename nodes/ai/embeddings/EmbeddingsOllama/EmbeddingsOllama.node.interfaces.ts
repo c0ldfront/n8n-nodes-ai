@@ -1,0 +1,35 @@
+export interface OllamaNodeOptionsParams {
+	baseURL?: string;
+	maxRetries?: number;
+	maxConcurrency?: number;
+	embeddingOnly?: boolean;
+	f16Kv?: boolean;
+	frequencyPenalty?: number;
+	logitsAll?: boolean;
+	lowVram?: boolean;
+	mainGpu?: number;
+	mirostat?: number;
+	mirostatEta?: number;
+	mirostatTau?: number;
+	numBatch?: number;
+	numCtx?: number;
+	numGpu?: number;
+	numGqa?: number;
+	numKeep?: number;
+	numThread?: number;
+	penalizeNewline?: boolean;
+	presencePenalty?: number;
+	repeatLastN?: number;
+	repeatPenalty?: number;
+	ropeFrequencyBase?: number;
+	ropeFrequencyScale?: number;
+	temperature?: number;
+	stop?: string[];
+	tfsZ?: number;
+	topK?: number;
+	topP?: number;
+	typicalP?: number;
+	useMlock?: boolean;
+	useMmap?: boolean;
+	vocabOnly?: boolean;
+}

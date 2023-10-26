@@ -1,0 +1,16 @@
+{
+	"node": "n8n-nodes-base.embeddingExample",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+		"categories": ["AI"],
+		"subcategories": {
+			"AI": ["Embeddings"]
+		},
+		"resources": {
+			"primaryDocumentation": [
+				{
+					"url": "https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingstensorflow/"
+				}
+			]
+		}
+}

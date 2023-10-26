@@ -1,0 +1,34 @@
+displayName,name,default,description,type
+Base URL,baseURL,http://localhost:11434,Override the default base URL for the API,string
+Max Retries,maxRetries,0,Maximum amount of time a request is allowed to retry before failure,number
+Max Concurrency,maxConcurrency,0,Maximum amount of concurrency connections allowed to process,number
+Embedding Only,embedding_only,false,Whether to generate embeddings only,boolean
+F16 Key-Value,f16_kv,false,Option for F16 key-value,boolean
+Frequency Penalty,frequency_penalty,0,Frequency penalty value,number
+Logits All,logits_all,false,Logits for all values,boolean
+Low VRAM,low_vram,false,Option for low VRAM,boolean
+Main GPU,main_gpu,0,Number representing the main GPU,number
+Mirostat,mirostat,0,Mirostat value,number
+Mirostat ETA,mirostat_eta,0,Mirostat ETA value,number
+Mirostat Tau,mirostat_tau,0,Mirostat Tau value,number
+Num Batch,num_batch,0,Number of batches,number
+Num Context,num_ctx,0,Number of contexts,number
+Num GPU,num_gpu,0,Number of GPUs,number
+Num GQA,num_gqa,0,Number of GQAs,number
+Num Keep,num_keep,0,Number to keep,number
+Num Thread,num_thread,0,Number of threads,number
+Penalize Newline,penalize_newline,false,Whether to penalize newline,boolean
+Presence Penalty,presence_penalty,0,Presence penalty value,number
+Repeat Last N,repeat_last_n,0,Repeat last N values,number
+Repeat Penalty,repeat_penalty,0,Repeat penalty value,number
+Rope Frequency Base,rope_frequency_base,0,Rope frequency base value,number
+Rope Frequency Scale,rope_frequency_scale,0,Rope frequency scale value,number
+Temperature,temperature,0,Temperature value,number
+Stop,stop,,Stop criteria (string array),string
+TFS Z,tfs_z,0,TFS Z value,number
+Top K,top_k,0,Top K value,number
+Top P,top_p,0,Top P value,number
+Typical P,typical_p,0,Typical P value,number
+Use Mlock,use_mlock,false,Use Mlock option,boolean
+Use Mmap,use_mmap,false,Use Mmap option,boolean
+Vocab Only,vocab_only,false,Option for vocabulary only,boolean

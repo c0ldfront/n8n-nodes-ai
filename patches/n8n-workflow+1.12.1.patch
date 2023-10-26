@@ -1,0 +1,13 @@
+diff --git a/node_modules/n8n-workflow/dist/Interfaces.d.ts b/node_modules/n8n-workflow/dist/Interfaces.d.ts
+index ebec486..f4907c8 100644
+--- a/node_modules/n8n-workflow/dist/Interfaces.d.ts
++++ b/node_modules/n8n-workflow/dist/Interfaces.d.ts
+@@ -798,7 +798,7 @@ export interface SupplyData {
+ }
+ export interface INodeType {
+     description: INodeTypeDescription;
+-    supplyData?(this: IExecuteFunctions): Promise<SupplyData>;
++	  supplyData(this: IExecuteFunctions, itemIndex: number): Promise<SupplyData>;
+     execute?(this: IExecuteFunctions): Promise<INodeExecutionData[][] | NodeExecutionWithMetadata[][] | null>;
+     poll?(this: IPollFunctions): Promise<INodeExecutionData[][] | null>;
+     trigger?(this: ITriggerFunctions): Promise<ITriggerResponse | undefined>;
