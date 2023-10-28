@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-ai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This package offers a collection of nodes designed specifically for AI, databases, langchain, and much more.",
   "keywords": [
     "n8n-community-node-package"
@@ -59,6 +59,7 @@
     "node": "20.8.1"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
     "patch-package": "^8.0.0"
   }
 }
