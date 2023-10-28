@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-ai",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "This package offers a collection of nodes designed specifically for AI, databases, langchain, and much more.",
   "keywords": [
     "n8n-community-node-package"
@@ -37,7 +37,9 @@
     "n8nNodesApiVersion": 1,
     "credentials": [],
     "nodes": [
-      "dist/nodes/ai/embeddings/EmbeddingsOllama/EmbeddingsOllama.node.js"
+      "dist/nodes/ai/embeddings/EmbeddingsOllama/EmbeddingsOllama.node.js",
+      "dist/nodes/storage/StorageSupabase/StorageSupabase.node.js",
+      "dist/nodes/ai/retriever/RetrieverSupabaseHybridSearch/RetrieverSupabaseHybridSearch.node.js"
     ]
   },
   "devDependencies": {
@@ -48,7 +50,6 @@
     "eslint-plugin-n8n-nodes-base": "^1.11.0",
     "fast-glob": "^3.3.1",
     "gulp": "^4.0.2",
-    "langchain": "^0.0.154",
     "n8n-core": "1.12.1",
     "n8n-workflow": "1.12.1",
     "prettier": "^2.7.1",
@@ -59,6 +60,8 @@
     "node": "20.8.1"
   },
   "dependencies": {
+    "langchain": "^0.0.174",
+    "@supabase/storage-js": "^2.5.4",
     "@supabase/supabase-js": "^2.38.4",
     "patch-package": "^8.0.0"
   }

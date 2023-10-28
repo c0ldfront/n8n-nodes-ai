@@ -16,8 +16,9 @@ Enhance your [n8n](https://n8n.io) workflow capabilities with `n8n-nodes-ai`! Th
 <details>
   <summary>Click to expand the list of featured nodes</summary>
 
-|    Node Name     |                  Description                  | Category | Sub-Category |
-| :--------------: | :-------------------------------------------: | :------: | :----------: |
-| EmbeddingsOllama | Ollama model we use for generating embeddings |    AI    |  Embeddings  |
+|           Node Name           |                                          Description                                           | Category | Sub-Category |
+| :---------------------------: | :--------------------------------------------------------------------------------------------: | :------: | :----------: |
+|       EmbeddingsOllama        |            Generates embeddings using the Ollama model for textual representation.             |    AI    |  Embeddings  |
+| RetrieverSupabaseHybridSearch | Combines pgvector similarity and Full-Text Search in Supabase for relevant document retrieval. |    AI    |  Retriever   |
 
 </details>

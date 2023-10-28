@@ -1,0 +1,20 @@
+{
+	"node": "n8n-nodes-base.retrieverSupabaseHybridSearch",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"AI"
+	],
+	"subcategories": {
+		"AI": [
+			"Retrievers"
+		]
+	},
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "#"
+			}
+		]
+	}
+}

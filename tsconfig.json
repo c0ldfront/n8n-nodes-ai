@@ -27,7 +27,8 @@
 		"nodes/**/*.json",
 		"package.json",
 		"types/**/*.d.ts",
-		"documents/containers"
+		"documents/containers",
+		"nodes/common"
 	],
 	"exclude": ["documents/**/*"],
 	"typeRoots": ["./types", "./node_modules/@types"]

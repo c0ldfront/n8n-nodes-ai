@@ -6,10 +6,11 @@ import {
 	type SupplyData,
 } from 'n8n-workflow';
 import { OllamaEmbeddings } from 'langchain/embeddings/ollama';
-import { logWrapper } from '@n8n/n8n-nodes-langchain/dist/utils/logWrapper';
 import { Embeddings } from 'langchain/embeddings/base';
 import { options } from './EmbeddingsOllama.node.options';
 import { OllamaNodeOptionsParams } from './EmbeddingsOllama.node.interfaces';
+import { callMethodAsync } from '@n8n/n8n-nodes-langchain/dist/utils/logWrapper';
+import { proxyLogWrapper } from '../../../common/SharedUtilities';
 
 export class EmbeddingsOllama implements INodeType {
 	description: INodeTypeDescription = {
@@ -123,7 +124,54 @@ export class EmbeddingsOllama implements INodeType {
 		}) as Embeddings;
 
 		return {
-			response: logWrapper(embeddings, this),
+			response: proxyLogWrapper(
+				embeddings,
+				this,
+				(target, prop, executeFunctions, connectionType) => {
+					if (prop === 'embedDocuments' && 'embedDocuments' in target) {
+						return async (documents: string[]): Promise<number[][]> => {
+							connectionType = NodeConnectionType.AiEmbedding;
+							const { index } = executeFunctions.addInputData(connectionType, [
+								[{ json: { documents } }],
+							]);
+
+							const response = (await callMethodAsync.call(target, {
+								executeFunctions,
+								connectionType,
+								currentNodeRunIndex: index,
+								method: target[prop],
+								arguments: [documents],
+							})) as number[][];
+
+							executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
+							return response;
+						};
+					}
+
+					// Query -> Embeddings
+					if (prop === 'embedQuery' && 'embedQuery' in target) {
+						return async (query: string): Promise<number[]> => {
+							connectionType = NodeConnectionType.AiEmbedding;
+							const { index } = executeFunctions.addInputData(connectionType, [
+								[{ json: { query } }],
+							]);
+
+							const response = (await callMethodAsync.call(target, {
+								executeFunctions,
+								connectionType,
+								currentNodeRunIndex: index,
+								method: target[prop],
+								arguments: [query],
+							})) as number[];
+
+							executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
+							return response;
+						};
+					}
+
+					return undefined;
+				},
+			),
 		};
 	}
 }
